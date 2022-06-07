@@ -5,6 +5,8 @@ function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&type=accurate&APPID=475b797ba66d1e6726639864d6add352`;
+
   return (
     <div className="app">
       <div className="container">
@@ -22,13 +24,16 @@ function App() {
 
         <div className="bottom">
           <div className="feels">
-            <p>25C</p>
+            <p className="bold">25C</p>
+            <p>Feels Like</p>
           </div>
           <div className="humidity">
-            <p>80%</p>
+            <p className="bold">80%</p>
+            <p>Humidity</p>
           </div>
           <div className="wind">
-            <p>10 MPH</p>
+            <p className="bold">10 MPH</p>
+            <p>Wind Speed</p>
           </div>
         </div>
       </div>
