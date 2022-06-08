@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&type=accurate&APPID=475b797ba66d1e6726639864d6add352`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&type=accurate&APPID=475b797ba66d1e6726639864d6add352`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
@@ -31,30 +31,34 @@ function App() {
       <div className="container">
         <div className="top">
           <div className="location">
-            <p>Toronto</p>
+            <p>{data.name}</p>
           </div>
           <div className="temp">
-            <h1>22C</h1>
+            {data.main ? <h1>{data.main.temp}°C</h1> : null}
           </div>
           <div className="description">
-            <p>Clouds</p>
+            {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
 
-        <div className="bottom">
-          <div className="feels">
-            <p className="bold">25C</p>
-            <p>Feels Like</p>
+        {data.name != undefined && (
+          <div className="bottom">
+            <div className="feels">
+              {data.main ? (
+                <p className="bold">{data.main.feels_like}°C</p>
+              ) : null}
+              <p>Feels Like</p>
+            </div>
+            <div className="humidity">
+              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
+              <p>Humidity</p>
+            </div>
+            <div className="wind">
+              {data.wind ? <p className="bold">{data.wind.speed} MPH</p> : null}
+              <p>Wind Speed</p>
+            </div>
           </div>
-          <div className="humidity">
-            <p className="bold">80%</p>
-            <p>Humidity</p>
-          </div>
-          <div className="wind">
-            <p className="bold">10 MPH</p>
-            <p>Wind Speed</p>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
