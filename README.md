@@ -1,6 +1,8 @@
 # Weather App 
 
-This is a simple weather app I made with [The Open Weather Map API](https://openweathermap.org/) and [Axios](https://www.npmjs.com/package/axios)
+This is a simple weather app I made with [The Open Weather Map API](https://openweathermap.org/) and [Axios](https://www.npmjs.com/package/axios).
+I used [UIGradients](https://uigradients.com/) for the background.
+
 
 # Getting Started with Create React App
 
