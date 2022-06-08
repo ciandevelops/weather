@@ -1,3 +1,7 @@
+# Weather App 
+
+This is a simple weather app I made with [The Open Weather Map API](https://openweathermap.org/) and [Axios](https://www.npmjs.com/package/axios)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
